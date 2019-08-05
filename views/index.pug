@@ -1,0 +1,14 @@
+doctype html
+html(lang="ja")
+    //script(src="/js/materialize.min.js")
+    script(src="/socket.io/socket.io.js")
+    script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+    script(src="/js/panel.js")
+    //link(rel='stylesheet', href='/css/materialize.min.css')
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    head
+        meta(charset="utf-8")
+        title Stream Control GUI
+    body
+        h1 Stream Control GUI webpanel
+        include panel.pug

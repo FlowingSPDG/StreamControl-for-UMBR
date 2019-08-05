@@ -1,0 +1,27 @@
+.row
+    .col.s12(style="text-align:center;")
+        .input-field.col.s12
+            .row
+                h3 Match Settings
+                label Best of 
+                    select#MatchBO
+                        option(value="3") 3
+                        option(value="5") 5
+                br
+                label STAGE
+                input(type="text" value="Final Destination")#Stage
+            .row
+                input(type="text" value="Team1 name")#p1name
+                input(type="text" value="Team1 name")#p2name
+                br
+                input(type="text" value="Team1 twitter")#p1twitter
+                input(type="text" value="Team2 twitter")#p2twitter
+                br
+                input(type="number" value="0")#p1score
+                input(type="number" value="0")#p2score
+                br
+                input(type="text" value="jp")#p1country
+                input(type="text" value="jp")#p2country
+            
+            .row
+                a#apply Apply!

@@ -1,0 +1,24 @@
+{
+  "name": "streamcontrol-for-umbr",
+  "version": "1.0.0",
+  "description": "Stream effect softwere",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlowingSPDG/StreamControl-for-UMBR.git"
+  },
+  "author": "Shugo \"FlowingSPDG\" Kawamura",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FlowingSPDG/StreamControl-for-UMBR/issues"
+  },
+  "homepage": "https://github.com/FlowingSPDG/StreamControl-for-UMBR#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pug": "^2.0.4",
+    "socket.io": "^2.2.0"
+  }
+}

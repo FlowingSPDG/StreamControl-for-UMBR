@@ -6,3 +6,4 @@ StreamControl/players\.csv
 streamcontrol\.json
 
 \.DS_Store
+node_modules
