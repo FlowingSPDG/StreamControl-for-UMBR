@@ -138,6 +138,12 @@ socket.on('ShowTwitterTag', function (bool) {
     switchTagTwitter();
 });
 
+socket.on('init', function (obj) {
+    console.log("scObj")
+    scObj = obj;
+    update()
+});
+
 socket.on('scObj', function (obj) {
     console.log("scObj")
     scObj = obj;
@@ -166,10 +172,10 @@ function update() {
         document.getElementById("player2").innerHTML = currPlayer2;
 
         currScore1 = scObj["pScore1"];
-        currScore1 = currScore1 > 2 && scObj["bestOf"] == "bo3" ? 2 : currScore1;
+        currScore1 = currScore1 > 2 && scObj["bestOf"] == "3" ? 2 : currScore1;
         currScore2 = scObj["pScore2"];
-        currScore2 = currScore2 > 2 && scObj["bestOf"] == "bo3" ? 2 : currScore2;
-        currBestOf = scObj["bestOf"];
+        currScore2 = currScore2 > 2 && scObj["bestOf"] == "3" ? 2 : currScore2;
+        currBestOf = "bo"+scObj["bestOf"];
         document.getElementById("score1").innerHTML = "<img src='imgs/"+ currBestOf +"-"+ currScore1 +".png'>";
         document.getElementById("score2").innerHTML = "<img src='imgs/"+ currBestOf +"-"+ currScore2 +".png'>";
 

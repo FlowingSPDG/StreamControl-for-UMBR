@@ -1,6 +1,5 @@
-var io = io();
+var socket = io();
 $(document).ready(() => {
-	
 	$("#apply").click(() => {
 		var updatedata = {
 			bestOf: $("#MatchBO").val(),
@@ -14,8 +13,23 @@ $(document).ready(() => {
 			pCountry1: $("#p1country").val(),
 			pCountry2: $("#p2country").val()
 		}
-		io.emit("update", updatedata);
+		socket.emit("update", updatedata);
+		console.log(updatedata)
 		console.log('update')
 	});
-    
+
+	socket.on('init', function (obj) {
+		console.log(obj)
+		$("#MatchBO").val(obj.bestOf)
+		$("#Stage").val(obj.stage)
+		$("#p1name").val(obj.pName1)
+		$("#p2name").val(obj.pName2)
+		$("#p1twitter").val(obj.pTwitter1),
+		$("#p2twitter").val(obj.pTwitter2),
+		$("#p1score").val(obj.pScore1),
+		$("#p2score").val(obj.pScore2),
+		$("#p1country").val(obj.pCountry1),
+		$("#p2country").val(obj.pCountry2)
+		console.log("connection")
+	})
 });

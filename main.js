@@ -4,11 +4,23 @@ const http = require('http').Server(app);
 const io = require('socket.io').listen(http);
 const PORT = 3000;
 
-var scObj;
+var scObj = {
+    bestOf: 3,
+    stage: "Final",
+    pName1: "TeamName1",
+    pName2: "TeamName2",
+    pTwitter1: "TeamTwitter1",
+    pTwitter2: "TeamTwitter2",
+    pScore1: 0,
+    pScore2: 0,
+    pCountry1: "jp",
+    pCountry2: "jp"
+}
 
 io.on('connection', (socket) => {
     console.log('connected');
-    io.emit("scObj",scObj)
+    socket.emit("init", scObj)
+    console.log(scObj)
     socket.on('refresh', () => { // init時など
         io.emit("scObj",scObj)
     })
@@ -28,7 +40,7 @@ function updatedata(data) {
     }
     else {
         console.log('updating scObj')
-        data["bestOf"] = "bo" + data["bestOf"]
+        //data["bestOf"] = "bo" + data["bestOf"]
         scObj = data;
         io.emit("scObj",scObj)
         //scObj.timestamp = 
